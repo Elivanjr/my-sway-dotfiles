@@ -170,7 +170,7 @@ exec swayidle -w \
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
+    # Troca o foco entre as janelas com tilling e as flutuantes
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
