@@ -1,60 +1,49 @@
-# Biscoito config
-
-#ainda em andamento, aprendendo algumas coisas 
-
-### Variables
-
-#Define a tecla super
+# ------------------------------------------------------------------    
+# ____  _               _ _        
+#|  _ \(_)             (_) |       
+#| |_) |_| ___  ___ ___  _| |_ ___  
+#|  _  | |/ __|/ __/ _ \| | __/ _ \ 
+#| |_) | |\__ \ (__ (_) | | |_ (_) |
+#|____/|_|____/\___\___/|_|\__\___/ 
+# Biscoito config                                   
+                                   
+#Define a tecla Super (aquela tecla com icone do Windows)
 set $mod Mod4
 
-#Mostra e esconde a Waybar com Super + O
+#Esconder e mostrar a Waybar
 bindsym $mod+o exec killall -SIGUSR1 waybar
 
-# Home row direction keys, like vim
+# Setas direcionais
 set $left h
 set $down j
 set $up k
 set $right l
 
-#Terminal favorito
+# Terminal utilizado
 set $term kitty
 
-#Launcher de apps
-set $menu wofi -show drun
+# Launcher de aplicativos com drun
+set $menu wofi -show drun --style ~/.config/wofi/style.css
 
-#VSCode
-set $cod /usr/bin/code
-
-#Geany
+# Editor de código utilizado
 set $editor geany
 
-# Explorador de arquivos... esse ainda nao ta funcionando...
-set $arquivo thunar
+# ------------------------------------------------------------------
 
 include /etc/sway/config-vars.d/*
 
 #Tirando screenshots com Grim
 set $screenshot grim ~/Images/sway_prints/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/red.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+# Usando o swaybg para usar essa imagem como wallpaper
+# output * bg /usr/share/backgrounds/sway/red.png fill
 
-### Coloca a tela em modo de suspensao
+#Definindo inatividade e swaylock para bloquear a tela com senha
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000' \
     before-sleep 'swaylock -f -c 000000'
 
-
-### Configuracao do Mouse (Touchpad)
- 
+#Definindo o input do touchpad (notebook)
    input "1267:12447:ELAN1200:00_04F3:309F_Touchpad" {
     tap enabled
     tap_button_map lrm
@@ -65,67 +54,58 @@ exec swayidle -w \
     natural_scroll enabled
     accel_profile adaptive
    }
-#
-# Use swaymsg -t get_inputs para descobrir o input do seu touchpad;
 
-### atalhos de teclado
+# ------------------------------------------------------------------
 
-    # Roda o terminal
+    #Abre o Terminal
     bindsym $mod+t exec $term
 
-    # Mata uma janela focada
+    #Encerra a janela em destaque
     bindsym $mod+Shift+q kill
 
-    # Roda o launcher de apps Wofi
+    #Inicia o launcher (menu de aplicativos)
     bindsym $mod+d exec $menu
-
-    # Roda o Visual Studio Code
-    bindsym $mod+p exec $cod
     
-    # Roda o editor Geany
+    #Inicia o editor de codigo
     bindsym $mod+g exec $editor
     
+# ------------------------------------------------------------------
     
-# Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
-
-    # Recarrega as configurações do sway
+    #Recarrega a configuração do Sway
     bindsym $mod+Shift+c reload
 
-    # Exit sway (logs you out of your Wayland session)
+    # Sair do Sway
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-#
-# Moving around:
-#
-    # Move your focus around
+
+# Se movendo pelas janelas:
+
+    # Muda o foco da janela em destaque
+    # Pode ser confuso por estar reptido, porem um serve para as teclas
+    # de direção normais e as outras são as teclas que definimos no
+    # inicio da config, volte a linha 16
+    
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
-    # Move the focused window with the same, but add Shift
+   # Move a janela em foco de posição com outras janelas
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
-    # Switch to workspace
+
+# ------------------------------------------------------------------
+
+#Navegando pelas áreas de trabalho
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
     bindsym $mod+3 workspace number 3
@@ -136,7 +116,8 @@ exec swayidle -w \
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
-    # Move focused container to workspace
+
+#Move a janela em destaque para a area de trabalho escolhida
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
     bindsym $mod+Shift+3 move container to workspace number 3
@@ -147,48 +128,26 @@ exec swayidle -w \
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
-#
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
+
+    
+# ------------------------------------------------------------------    
+    
+#Você pode “dividir" o objeto atual sob foco usando
+#$ mod+b ou $mod+v, para divisões horizontal e vertical respectivamente
+    
     bindsym $mod+b splith
     bindsym $mod+v splitv
 
-    # Switch the current container between different layout styles
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
-    bindsym $mod+s layout stacking
-
-
-    # Make the current focus fullscreen
+    #Coloca a janela em foco em tela cheia
     bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
+    #Coloca a janela em foco no tilling ou modo flutuante
     bindsym $mod+Shift+space floating toggle
 
-    # Troca o foco entre as janelas com tilling e as flutuantes
+    #Muda o foco entre as janelas flutuantes e as janelas com tilling
     bindsym $mod+space focus mode_toggle
 
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
-#
-# Resizing containers:
+# Redimensionando janelas:
 #
 mode "resize" {
     # left will shrink the containers width
@@ -212,6 +171,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# ------------------------------------------------------------------    
+
 # Aumentar volume
 bindsym XF86AudioRaiseVolume exec pamixer --increase 10
 
@@ -230,15 +191,11 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 #Tirar print e copiar para area de transparencia
 bindsym $mod+Shift+s exec ~/bin/screenshot.sh
 
+# ------------------------------------------------------------------    
 
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
+#Barra de Status
 bar {
     position top
-
-    # When the status_command prints a new line to stdout, swaybar updates
-    # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
     status_command i3status
     # swaybar_command waybar
@@ -250,41 +207,88 @@ bar {
     # }
 }
 
+#Encerra a barra padrão do Sway e inicia a Waybar que você personalizou
 exec_always pkill waybar && waybar &
+
+#Remove o nome da janela
 for_window [class=".*"] border none
 
+# ----------------------------------------
+
+#Aviso: essa seção NECESSITA do swayfx para rodar, fora que consome mais
+# da sua maquina.
+#Configuração de Blur nas janelas
+
+#blur off
+#blur_xray off
+#blur_passes 3
+#blur_radius 10
+
+#Configuração de Opacidade nas janelas
+#for_window [class=".*"] opacity set 0.8
+#for_window [app_id="gimp*"] opacity set 1.0
+#for_window [app_id="krita*"] opacity set 1.0
+#for_window [app_id="org.inkscape.Inkscape"] opacity set 1.0
+#for_window [app_id="virt-manager"] opacity set 1.0
+#for_window [app_id="com.obsproject.Studio"] opacity set 1.0
+
+#Mais configuração de Blur, acho que desliga o blur em certas
+#aplicações, eu acho... Ainda estou aprendendo sobre o swayfx...
+
+#for_window [app_id="gimp*"] blur disable
+#for_window [class="krita*"] blur disable
+#for_window [app_id="org.inkscape.Inkscape"] blur disable
+#for_window [app_id="virt-manager"] blur disable
+#for_window [app_id="com.obsproject.Studio"] blur disable
+
+# ------------------------------------------
 
 #Bordas coloridas nas janelas
 default_border pixel 1
 default_floating_border pixel 1
-
+	
+	#Cores
     client.focused          #ff0000 #ff0000 #ffffff
-    client.unfocused        #2e3440 #1f222d #888888
-    client.focused_inactive #2e3440 #1f222d #888888 
+    client.unfocused        #ff0000 #ff0000 #888888
+    client.focused_inactive #ff0000 #ff0000 #888888 
     client.placeholder      #2e3440 #1f222d #888888
     client.urgent           #D08770 #D08770 #ffffff
     client.background       #000000
 
 # --------------------------------------
+
+#Define gaps nas janelas, para não usarem toda a tela, isso só é para
+#estetica, não precisa usar.
+gaps inner 10
+gaps outer 0
+
+#Bordas arredonandas (necessita do swayfx)
+smart_corner_radius on
+corner_radius 10
+
+#Muda o teclado para o ABNT2
 input * {
     xkb_layout br, 
     xkb_variant abnt2
-
 }
 
-gaps inner  10
-gaps outer  0
+#--------------------------------------------
 
+#Mata o swaybg (wallpaper do sway), só use se for usar o mpvpaper
+exec_always pkill swaybg
+
+#Usa o mpvpaper para papeis de parede dinamicos como .mp4, .mkv
+exec_always mpvpaper -o "no-audio loop --vo=libmpv --hwdec=auto" '*' /home/biscoito/Vídeos/waguri.mp4
 
 # Atualiza variáveis do Wayland pro D-Bus
-#exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-#exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-#
-# Inicia o backend WLR do portal / isso que faz ser possivel usar a transmissão de tela em discord ou OBS-Studio
-#exec /usr/lib/xdg-desktop-portal-wlr &
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
+# Inicia o backend WLR do portal / isso que faz ser possivel usar a transmissão de tela
+exec /usr/lib/xdg-desktop-portal-wlr &
 
-
-
+#--------------------------------------------
 
 include /etc/sway/config.d/*
+
+#--------------------------------------------
