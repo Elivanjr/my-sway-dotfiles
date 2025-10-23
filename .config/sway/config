@@ -284,7 +284,7 @@ exec_always mpvpaper -o "no-audio loop --vo=libmpv --hwdec=auto" '*' /home/bisco
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
-# Inicia o backend WLR do portal / isso que faz ser possivel usar a transmissão de tela
+# Inicia o backend WLR do portal / isso que faz ser possivel usar a transmissão de tela no Discord, OBS-Studio, etc
 exec /usr/lib/xdg-desktop-portal-wlr &
 
 #--------------------------------------------
