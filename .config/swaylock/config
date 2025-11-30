@@ -1,0 +1,49 @@
+show-failed-attempts
+show-keyboard-layout
+
+# Fonte e tamanho
+font=JetBrainsMono NF
+font-size=50
+
+# Indicador do anel
+indicator-idle-visible
+indicator-thickness=25
+indicator-radius=200
+
+# Fundo
+color=19172488
+
+# Área interna do círculo
+inside-color=2d1a2f        
+inside-clear-color=2d1a2f
+inside-ver-color=3d2a4a     
+inside-wrong-color=d9989c   
+
+# Anel
+ring-color=c678dd           
+ring-clear-color=b48ead     
+ring-ver-color=d9c77e       
+ring-wrong-color=d9989c     
+
+# Destaque da tecla
+key-hl-color=ebbcba
+
+# Layout do teclado
+layout-bg-color=1a0e1f
+layout-border-color=2d1a2f
+layout-text-color=e0def4
+
+# Linha do círculo
+line-color=2d1a2f
+line-clear-color=2d1a2f
+line-ver-color=d9c77e
+line-wrong-color=d9989c
+
+# Separador
+separator-color=2d1a2f
+
+# Texto
+text-color=f2e3f3
+text-clear-color=f2e3f3
+text-ver-color=d9c77e
+text-wrong-color=d9989c
