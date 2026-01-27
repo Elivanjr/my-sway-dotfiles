@@ -11,11 +11,13 @@
 
 | Função           |    App     |
 |------------------|------------|
-| OS               | Debian 12  |
-| Window Manager   | SwayFX     |
-| Shell            | bash       |
-| Launcher         | Wofi       |
-| Bar              | Waybar     |
-| Notification Daemon | swaync  |
-| Editor           | Neovim     |
-
+| 🖥️ OS | Debian 12 Bookworm|
+| 🪟 Window Manager | SwayFX |
+| 🐚 Shell | bash |
+| 🚀 Launcher | Wofi |
+| 📊 Bar | Waybar |
+| 🔔 Notification Daemon | swaync |
+| ✍️ Editor | Neovim |
+| 📁 File Manager | nautilus |
+| 🔤 Font | JetBrains Mono Nerd Font |
+| 🖼️ Wallpaper Manager | swaybg |
