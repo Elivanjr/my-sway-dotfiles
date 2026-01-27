@@ -7,7 +7,8 @@
 # *Depois*
 <img src="https://raw.githubusercontent.com/Elivanjr/my-sway-dotfiles/main/.config/screenshots/perceba.gif" alt="Meu novo sway" width="500" />
 
-| Teste | Teste |
+|My Setup|
 |----------|----------|
-| Dado 1   | Dado 2   |
-| Dado 3   | Dado 4   |
+| Window Manager     | SwayFX   |
+| Launcher   | Wofi   |
+| Shell   | bash |
