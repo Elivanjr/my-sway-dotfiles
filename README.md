@@ -6,3 +6,8 @@
 
 # *Depois*
 <img src="https://raw.githubusercontent.com/Elivanjr/my-sway-dotfiles/main/.config/screenshots/perceba.gif" alt="Meu novo sway" width="500" />
+
+| Teste | Teste |
+|----------|----------|
+| Dado 1   | Dado 2   |
+| Dado 3   | Dado 4   |
