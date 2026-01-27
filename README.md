@@ -9,8 +9,13 @@
 
 ## My Setup
 
-| Categoria        | Ferramenta |
+| Função           |    App     |
 |------------------|------------|
+| OS               | Debian 12  |
 | Window Manager   | SwayFX     |
-| Launcher         | Wofi       |
 | Shell            | bash       |
+| Launcher         | Wofi       |
+| Bar              | Waybar     |
+| Notification Daemon | swaync  |
+| Editor           | Neovim     |
+
