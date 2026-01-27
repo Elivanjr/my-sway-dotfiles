@@ -1,8 +1,8 @@
 # my-sway-dotfiles
  Repositório dedicado ao meu aprendizado e experimentos com o compositor de janelas Sway e Sway-FX
 
- Antes
-<img src="https://raw.githubusercontent.com/Elivanjr/my-sway-dotfiles/main/.config/screenshots/teste.gif" alt="Meu sway" width="500" />
+ *Antes*
+![Banner]<img src="https://raw.githubusercontent.com/Elivanjr/my-sway-dotfiles/main/.config/screenshots/teste.gif" alt="Meu sway" width="500" />
 
  Depois
 <img src="https://raw.githubusercontent.com/Elivanjr/my-sway-dotfiles/main/.config/screenshots/perceba.gif" alt="Meu novo sway" width="500" />
