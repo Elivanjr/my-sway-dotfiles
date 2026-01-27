@@ -7,8 +7,10 @@
 # *Depois*
 <img src="https://raw.githubusercontent.com/Elivanjr/my-sway-dotfiles/main/.config/screenshots/perceba.gif" alt="Meu novo sway" width="500" />
 
-|My Setup|
-|----------|----------|
-| Window Manager     | SwayFX   |
-| Launcher   | Wofi   |
-| Shell   | bash |
+## My Setup
+
+| Categoria        | Ferramenta |
+|------------------|------------|
+| Window Manager   | SwayFX     |
+| Launcher         | Wofi       |
+| Shell            | bash       |
