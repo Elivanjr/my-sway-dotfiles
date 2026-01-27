@@ -37,11 +37,13 @@ set $screenshot grim ~/Images/sway_prints/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
 # Usando o swaybg para usar essa imagem como wallpaper
 # output * bg /usr/share/backgrounds/sway/red.png fill
+# Esse é o correto dentro do config, se for definir pelo terminal use é com swaymsg output e o resto...
 
 #Definindo inatividade e swaylock para bloquear a tela com senha
-exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000' \
-    before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+#    timeout 300 'swaylock -f -c 000000' \
+#    before-sleep 'swaylock -f -c 000000'
+# Ignore isso se quiser...
 
 #Definindo o input do touchpad (notebook)
    input "1267:12447:ELAN1200:00_04F3:309F_Touchpad" {
@@ -75,7 +77,7 @@ exec swayidle -w \
     bindsym $mod+Shift+c reload
 
     # Sair do Sway
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Deseja voltar a realidade e aceitar seu destino???' -B 'Sim... pois não há escapatória' 'swaymsg exit'
 
 # Se movendo pelas janelas:
 
@@ -240,6 +242,11 @@ for_window [class=".*"] border none
 #for_window [app_id="org.inkscape.Inkscape"] blur disable
 #for_window [app_id="virt-manager"] blur disable
 #for_window [app_id="com.obsproject.Studio"] blur disable
+
+#Janelas flutuantes para esses apps, não quero que fiquem em tilling
+for_window [app_id="pavucontrol"] floating enable, resize set width 650 height 450, move position center
+for_window [app_id="imv-wayland"] floating enable, resize set width 650 height 450, move position center
+for_window [app_id="qimgv"] floating enable, resize set width 650 height 450, move position center
 
 # ------------------------------------------
 
