@@ -3,7 +3,7 @@
 	// Using margin-bottom with a negative value in order to reduce the space between Hyprland window and waybar
 	//"margin-bottom": 10,
 	//"margin-top": 10,
-	"modules-left": ["custom/launcher", "cpu","memory", "network","custom/spotify", "custom/cava"],
+	"modules-left": ["image/avatar", "cpu","memory", "network","custom/spotify"],
 	"modules-center": ["sway/workspaces"],
 	"modules-right": ["tray","pulseaudio", "pulseaudio#microphone","clock", "battery", "custom/power"],
 	
@@ -44,7 +44,7 @@
         "format-disconnected": "󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
         "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-        "interval": 2
+        "interval": 10
     },
     "battery": {
         "states": {
@@ -71,7 +71,7 @@
         "format-alt": "{:%d-%m-%Y}"
     },
     "cpu": {
-        "interval": 10,
+        "interval": 5,
         "format": "󰍛 {usage}%",
         "format-alt": "{icon0}{icon1}{icon2}{icon3}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
@@ -82,7 +82,7 @@
             "h": 60, // high
             "m": 30 // medium
         },
-        "interval": 10,
+        "interval": 8,
         "format": "󰾆 {used}GB",
         "format-m": "󰾅 {used}GB",
         "format-h": "󰓅 {used}GB",
@@ -129,5 +129,11 @@
             "focused": "",
             "default": ""
       }
-    }
+    },
+  "image/avatar": {
+    "path": "/home/biscoito/Imagens/sway_wallpapers/angel.png",
+    "size": 35,
+    "on-click": "wofi",
+    "on-click-right": "killall wofi"
+  }
 }

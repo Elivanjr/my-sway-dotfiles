@@ -235,3 +235,13 @@ window#waybar.hidden {
 	background: #F2CDCD;
 }
 
+#image-avatar {
+  background: rgba(242, 143, 173, 0.18);
+  padding: 999px;
+  margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	padding-right: 10px;
+	border-radius: 10px;
+}
