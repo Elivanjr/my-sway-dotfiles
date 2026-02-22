@@ -11,7 +11,7 @@
 
 | Função           |    App     |
 |------------------|------------|
-| 🖥️ OS | Debian 12 Bookworm|
+| 🖥️ OS | CachyOS|
 | 🪟 Window Manager | SwayFX |
 | 🐚 Shell | bash |
 | 🚀 Launcher | Wofi |
