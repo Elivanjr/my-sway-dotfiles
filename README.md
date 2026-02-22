@@ -13,7 +13,7 @@
 |------------------|------------|
 | 🖥️ OS | CachyOS|
 | 🪟 Window Manager | SwayFX |
-| 🐚 Shell | bash |
+| 🐚 Shell | fish |
 | 🚀 Launcher | Wofi |
 | 📊 Bar | Waybar |
 | 🔔 Notification Daemon | swaync |
